@@ -7,6 +7,8 @@
 <!-- head -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.x/dist/purify.min.js"></script>
 </head>
 <body>
   <h1>Gestionnaire de notes</h1>
