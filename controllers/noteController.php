@@ -16,4 +16,9 @@ if (isset($_GET['delete'])) {
     exit;
 }
 
-$notes = getNotes($pdo);
+if (isset($_GET['search'])) {
+    $search = $_GET['search'];
+    $notes = searchNotes($pdo, $search);
+} else {
+    $notes = getNotes($pdo);
+}
