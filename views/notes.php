@@ -1,24 +1,31 @@
-<form action="index.php" method="get">
-  <label for="search">Recherche :</label>
-  <input type="text" name="search" id="search">
-  <input type="submit" value="Rechercher">
+<form action="index.php" method="get" class="form2">
+  <input type="text" name="search" id="search" placeholder="Votre recherche..." >
+  <button type="submit">Rechercher</button>
 </form>
 
-<ul>
-  <?php foreach ($notes as $index => $note): ?>
-    <li>
-      <strong><?= htmlspecialchars($note['title']) ?></strong>
-      <div id="rendered-<?= $index ?>"></div>
-      <small><?= $note['created_at'] ?></small>
-      <a href="index.php?delete=<?= $note['id'] ?>">❌ Supprimer</a>
+<div class="card-container">
+  <?php foreach($notes as $index => $note): ?>
+    <div class="card">
+      <div class="card-details">
+        <p class="card-title"><?= htmlspecialchars($note['title']) ?></p>
 
-      <script>
-        const raw<?= $index ?> = <?= json_encode($note['content'] ?? "") ?>;
-        const html<?= $index ?> = marked.parse(raw<?= $index ?>);
-        document.getElementById("rendered-<?= $index ?>").innerHTML = DOMPurify.sanitize(html<?= $index ?>);
-      </script>
-    </li>
+        <div class="card-description" id="rendered-<?= $index ?>"></div>
+
+        <div class="create-detail">
+          <small><?= $note['created_at'] ?></small>
+        </div>
+        
+
+        <a href="index.php?delete=<?= $note['id'] ?>" class="card-delete">Supprimer</a>
+
+      </div>
+    </div>
+
+    <script>
+      const raw<?= $index ?> = <?= json_encode($note['content'] ?? "") ?>;
+      const html<?= $index ?> = marked.parse(raw<?= $index ?>);
+      document.getElementById("rendered-<?= $index?>").innerHTML = DOMPurify.sanitize(html<?= $index ?>);
+    </script>
   <?php endforeach; ?>
-</ul>
-
+</div>
 
