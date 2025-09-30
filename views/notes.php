@@ -5,31 +5,31 @@
 </form>
 
 
+<div class="h2">
+    <h2>Mes notes</h2>
+</div>
+
+<button class="link"><a href="index.php?route=notes.create">Ajouter une note</a></button>
+
 <div class="card-container">
-
-<h2>Mes notes</h2>
-<a href="index.php?route=notes.create">+ Ajouter une note</a>
-<ul>
-  <?php foreach ($notes as $note): ?>
-    <div class="card">
-      <div class="card-details">
-        <li>
-          <p class="card-title"><?= $note['title'] ?></p>
-
-          <div class="card-description">
-            <?= $note['content'] ?>
-          </div>
-
+<div class="card-media">
+  <div class="card-container">
+    <?php foreach ($notes as $note): ?>
+      <div class="card">
+        <div class="card-details">
+          <p class="card-title"><?= htmlspecialchars($note['title']) ?></p>
+          <div class="card-description"><?= nl2br(htmlspecialchars($note['content'])) ?></div>
           <div class="create-detail">
-          <small><?= $note['created_at'] ?></small>
+            <small><?= htmlspecialchars($note['created_at']) ?></small>
           </div>
-
-          <a href="index.php?route=notes.delete&id=<?= $note['id'] ?>">Supprimer</a>
-        </li>
+          <button class="card-delete">
+            <a href="index.php?route=notes.delete&id=<?= urlencode($note['id']) ?>" onclick="return confirm('Supprimer cette note ?')">Supprimer</a>
+          </button>
+        </div>
       </div>
-    </div>
-  <?php endforeach; ?>
-</ul>
+    <?php endforeach; ?>
+  </div>
+</div>
 
 </div>
 

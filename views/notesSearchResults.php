@@ -2,10 +2,7 @@
 
 <h2>Résultats de la recherche pour : "<?php echo htmlspecialchars($search); ?>"</h2>
 
-<p>
-    <a href="index.php?route=notes.index">← Retour à la liste complète</a>
-</p>
-
+<button class="link"><a href="index.php?route=notes.index">Retour à la liste complète</a></button>
 
 <?php if (empty($notes)) : ?>
     <p>Aucune note trouvée.</p>

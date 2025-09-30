@@ -19,6 +19,10 @@ body {
   color: black;
 }
 
+a{
+  color: black;
+}
+
 .editor-toolbar {
   background-color: white;
 }
@@ -48,7 +52,7 @@ form textarea {
   line-height: 1.4;
 }
 
-form button{
+form button, .link{
   font-size: 15px;
   padding: 12px;
   font-weight: 600;
@@ -61,6 +65,14 @@ form button{
   transition: all 0.3s ease;
 }
 
+button.link {
+  margin: 20px;
+}
+
+.form-add {
+  height: 80vh;
+}
+
 form button[type="submit"]:hover {
   color: whitesmoke;
   background: grey;
@@ -70,9 +82,6 @@ form button[type="submit"]:hover {
 .card-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
   gap: 20px;
   padding: 20px;
   max-width: 900px;
@@ -80,10 +89,6 @@ form button[type="submit"]:hover {
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
   max-width: 260px;
   min-height: 320px;
   background-color: grey;

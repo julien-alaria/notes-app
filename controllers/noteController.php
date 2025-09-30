@@ -20,7 +20,7 @@ function storeNote() {
         $title = trim($_POST['title']);
         $content = trim($_POST['content']);
         if ($title !== '') {
-            addNote($title, $content);  // Fonction modèle qui insère en base
+            addNote($title, $content);
         }
     }
     header("Location: index.php?route=notes.index");
