@@ -1,31 +1,35 @@
 <form action="index.php" method="get" class="form2">
+  <input type="hidden" name="route" value="notes.search">
   <input type="text" name="search" id="search" placeholder="Votre recherche..." >
   <button type="submit">Rechercher</button>
 </form>
 
+
 <div class="card-container">
-  <?php foreach($notes as $index => $note): ?>
+
+<h2>Mes notes</h2>
+<a href="index.php?route=notes.create">+ Ajouter une note</a>
+<ul>
+  <?php foreach ($notes as $note): ?>
     <div class="card">
       <div class="card-details">
-        <p class="card-title"><?= htmlspecialchars($note['title']) ?></p>
+        <li>
+          <p class="card-title"><?= $note['title'] ?></p>
 
-        <div class="card-description" id="rendered-<?= $index ?>"></div>
+          <div class="card-description">
+            <?= $note['content'] ?>
+          </div>
 
-        <div class="create-detail">
+          <div class="create-detail">
           <small><?= $note['created_at'] ?></small>
-        </div>
-        
+          </div>
 
-        <a href="index.php?delete=<?= $note['id'] ?>" class="card-delete">Supprimer</a>
-
+          <a href="index.php?route=notes.delete&id=<?= $note['id'] ?>">Supprimer</a>
+        </li>
       </div>
     </div>
-
-    <script>
-      const raw<?= $index ?> = <?= json_encode($note['content'] ?? "") ?>;
-      const html<?= $index ?> = marked.parse(raw<?= $index ?>);
-      document.getElementById("rendered-<?= $index?>").innerHTML = DOMPurify.sanitize(html<?= $index ?>);
-    </script>
   <?php endforeach; ?>
+</ul>
+
 </div>
 
