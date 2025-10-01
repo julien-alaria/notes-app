@@ -53,23 +53,41 @@ L'application suit le modèle MVC en séparant:
 
 notes-app/
 │
+
 ├── controllers/
+
 │   └── noteController.php
+
 │
+
 ├── models/
+
 │   ├── db.php
+
 │   └── noteModel.php
+
 │
+
 ├── views/
+
 │   ├── footer.php
+
 │   ├── form.php
+
 │   ├── header.php
+
 │   ├── notes.php
+
 │   └── results.php
+
 │
+
 ├── database.sqlite
+
 ├── index.php          ← Point d’entrée principal
+
 ├── routeur.php        ← Gestionnaire des routes
+
 └── README.md
 
 # Licence
