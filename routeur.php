@@ -22,4 +22,5 @@ switch ($route) {
         break;
     default:
         echo "404 - Page not found";
+    
 }

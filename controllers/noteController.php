@@ -16,7 +16,7 @@ function createNote() {
 }
 
 function storeNote() {
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $title = trim($_POST['title']);
         $content = trim($_POST['content']);
         if ($title !== '') {
@@ -24,7 +24,6 @@ function storeNote() {
         }
     }
     header("Location: index.php?route=notes.index");
-    exit;
 }
 
 function deleteNote() {
@@ -44,7 +43,6 @@ function searchNote() {
     }
 
     include 'views/header.php';
-    include 'views/notesSearchResults.php';
+    include 'views/results.php';
     include 'views/footer.php';
 }
-

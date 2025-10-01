@@ -11,7 +11,6 @@
 </head>
 <body>
   <div class="top">
-     <h1>Gestionnaire de notes</h1>
+    <h1>Gestionnaire de notes</h1>
   </div>
- 
   <hr>
