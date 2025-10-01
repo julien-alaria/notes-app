@@ -14,24 +14,24 @@
 
     <div class="card-container">
        
-            <?php foreach ($notes as $note): ?>
-                <div class="card">
-                    <div class="card-details">
-                        <p class="card-title"><?= htmlspecialchars($note['title']) ?></p>
+        <?php foreach ($notes as $note): ?>
+            <div class="card">
+                <div class="card-details">
+                    <p class="card-title"><?= htmlspecialchars($note['title']) ?></p>
 
-                        <p>
-                            <div class="rendered" data-md="<?= htmlspecialchars($note['content'], ENT_QUOTES) ?>"></div>
-                        </p>
+                    <p>
+                        <div class="rendered" data-md="<?= htmlspecialchars($note['content'], ENT_QUOTES) ?>"></div>
+                    </p>
 
-                        <div class="create-detail">
-                            <small><?= htmlspecialchars($note['created_at']) ?></small>
-                        </div>
-
-                        <a class="card-delete" href="index.php?route=notes.delete&id=<?= ($note['id']) ?>">Supprimer</a>
-
+                    <div class="create-detail">
+                        <small><?= htmlspecialchars($note['created_at']) ?></small>
                     </div>
+
+                    <a class="card-delete" href="index.php?route=notes.delete&id=<?= ($note['id']) ?>">Supprimer</a>
+
                 </div>
-            <?php endforeach; ?>
+            </div>
+        <?php endforeach; ?>
      
     </div>
 

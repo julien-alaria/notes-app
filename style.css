@@ -205,6 +205,10 @@ form button[type="submit"]:hover {
   margin: 0;
 }
 
+.form-add {
+  height: 82vh;
+}
+
 .footer {
   display:flex;
   justify-content: center;
