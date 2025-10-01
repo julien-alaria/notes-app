@@ -4,7 +4,6 @@ require 'controllers/noteController.php';
 
 $route = $_POST['route'] ?? $_GET['route'] ?? 'notes.index';
 
-
 switch ($route) {
     case 'notes.index':
         indexNotes();
