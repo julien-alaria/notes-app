@@ -47,7 +47,8 @@ L'application suit le modèle MVC en séparant:
 
 # Captures d'écran de l'application
 
-![presentation](note-app-screenshot.jpg)
+![presentation](notes-app_screenshot1.png)
+![presentation](notes-app_screenshot2.png)
 
 # Arborescence du projet
 
